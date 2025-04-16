@@ -1,0 +1,32 @@
+Line# 1: Token <struct> Lexeme struct found
+Line# 1: Token <ID> Lexeme Car found
+Line# 2: Token <LCURL> Lexeme { found
+Line# 3: Token <INT> Lexeme int found
+type_specifier	:  INT
+Line# 3: Token <ID> Lexeme wheels found
+Line# 3: Token <SEMICOLON> Lexeme ; found
+declaration_list	:  ID
+var_declaration	:  type_specifier declaration_list SEMICOLON
+statement	:  var_declaration
+statements	:  statement
+Line# 4: Token <FLOAT> Lexeme float found
+type_specifier	:  FLOAT
+Line# 4: Token <ID> Lexeme max_speed found
+Line# 4: Token <SEMICOLON> Lexeme ; found
+declaration_list	:  ID
+var_declaration	:  type_specifier declaration_list SEMICOLON
+statement	:  var_declaration
+statements	:  statements statement
+Line# 5: Token <RCURL> Lexeme } found
+compound_statement	:  LCURL statements RCURL
+	ScopeTable# 2
+	1 --> (wheels,INT)
+	7 --> (max_speed,FLOAT)
+	ScopeTable# 1
+struct_definition	:  struct ID compound_statement
+unit	:  struct_definition
+program	:  unit
+Line# 5: Token <SEMICOLON> Lexeme ; found
+start	:  program
+Total Lines: 5
+Total Errors: 0

@@ -1,0 +1,25 @@
+start : program 	<Line: 1-5>
+ program : unit 	<Line: 1-5>
+  unit : struct_definition 	<Line: 1-5>
+   struct_definition : struct ID compound_statement 	<Line: 1-5>
+    struct : struct 	<Line: 1>
+    ID : Car 	<Line: 1>
+    compound_statement : LCURL statements RCURL 	<Line: 2-5>
+     LCURL : { 	<Line: 2>
+     statements : statements statement 	<Line: 3-4>
+      statements : statement 	<Line: 3-3>
+       statement : var_declaration 	<Line: 3-3>
+        var_declaration : type_specifier declaration_list SEMICOLON 	<Line: 3-3>
+         type_specifier : INT 	<Line: 3-3>
+          INT : int 	<Line: 3>
+         declaration_list : ID 	<Line: 3-3>
+          ID : wheels 	<Line: 3>
+         SEMICOLON : ; 	<Line: 3>
+      statement : var_declaration 	<Line: 4-4>
+       var_declaration : type_specifier declaration_list SEMICOLON 	<Line: 4-4>
+        type_specifier : FLOAT 	<Line: 4-4>
+         FLOAT : float 	<Line: 4>
+        declaration_list : ID 	<Line: 4-4>
+         ID : max_speed 	<Line: 4>
+        SEMICOLON : ; 	<Line: 4>
+     RCURL : } 	<Line: 5>
